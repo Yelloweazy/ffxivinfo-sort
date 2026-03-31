@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FFXIV 神站資料平台</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-white">
+<nav class="fixed top-0 w-full bg-black/50 backdrop-blur z-50 p-4 flex justify-center gap-6">
+  <a href="index.html">首頁</a>
+  <a href="pages/beginner.html">新手</a>
+  <a href="pages/tools.html">工具</a>
+  <a href="pages/glamour.html">幻化</a>
+  <a href="pages/raid.html">高難</a>
+  <button id="toggleTheme">🌗 夜/日</button>
+</nav>
+<section class="h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
+  <div class="absolute w-96 h-96 bg-blue-500 opacity-20 blur-3xl rounded-full top-10"></div>
+  <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">FFXIV 神站資料平台</h1>
+  <p class="text-gray-300 mb-6" data-aos="fade-up" data-aos-delay="200">從新手到高難玩家的一站式資源中心</p>
+  <div class="flex gap-4" data-aos="fade-up" data-aos-delay="400">
+    <a href="#results" class="bg-blue-600 px-6 py-3 rounded-xl glow">🚀 開始探索</a>
+  </div>
+</section>
+<section class="p-6 text-center mt-6">
+<input id="search" placeholder="搜尋攻略 / 工具 / 幻化..."
+class="px-4 py-2 w-80 rounded bg-gray-800 text-white">
+<div class="flex justify-center gap-4 mt-4">
+  <button onclick="filter('全部')" class="px-3 py-1 bg-gray-700 rounded">全部</button>
+  <button onclick="filter('新手')" class="px-3 py-1 bg-gray-700 rounded">新手</button>
+  <button onclick="filter('工具')" class="px-3 py-1 bg-gray-700 rounded">工具</button>
+  <button onclick="filter('幻化')" class="px-3 py-1 bg-gray-700 rounded">幻化</button>
+  <button onclick="filter('高難')" class="px-3 py-1 bg-gray-700 rounded">高難</button>
+</div>
+</section>
+<section class="p-6">
+<div id="results" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+<footer class="py-10 text-center text-gray-500 text-sm">© 2026 FFXIV 神站資料平台</footer>
+<script src="database.js"></script>
+<script src="js/main.js"></script>
+<script>
+AOS.init({ duration:800, once:true });
+render(data);
+</script>
+</body>
+</html>
