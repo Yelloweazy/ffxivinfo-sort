@@ -1,51 +1,66 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FFXIV 神站資料平台</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>FFXIV 資料站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body class="text-white">
-<nav class="fixed top-0 w-full bg-black/50 backdrop-blur z-50 p-4 flex justify-center gap-6">
-  <a href="index.html">首頁</a>
-  <a href="pages/beginner.html">新手</a>
-  <a href="pages/tools.html">工具</a>
-  <a href="pages/glamour.html">幻化</a>
-  <a href="pages/raid.html">高難</a>
-  <button id="toggleTheme">🌗 夜/日</button>
-</nav>
-<section class="h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
-  <div class="absolute w-96 h-96 bg-blue-500 opacity-20 blur-3xl rounded-full top-10"></div>
-  <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">FFXIV 神站資料平台</h1>
-  <p class="text-gray-300 mb-6" data-aos="fade-up" data-aos-delay="200">從新手到高難玩家的一站式資源中心</p>
-  <div class="flex gap-4" data-aos="fade-up" data-aos-delay="400">
-    <a href="#results" class="bg-blue-600 px-6 py-3 rounded-xl glow">🚀 開始探索</a>
-  </div>
-</section>
-<section class="p-6 text-center mt-6">
-<input id="search" placeholder="搜尋攻略 / 工具 / 幻化..."
-class="px-4 py-2 w-80 rounded bg-gray-800 text-white">
-<div class="flex justify-center gap-4 mt-4">
-  <button onclick="filter('全部')" class="px-3 py-1 bg-gray-700 rounded">全部</button>
-  <button onclick="filter('新手')" class="px-3 py-1 bg-gray-700 rounded">新手</button>
-  <button onclick="filter('工具')" class="px-3 py-1 bg-gray-700 rounded">工具</button>
-  <button onclick="filter('幻化')" class="px-3 py-1 bg-gray-700 rounded">幻化</button>
-  <button onclick="filter('高難')" class="px-3 py-1 bg-gray-700 rounded">高難</button>
-</div>
-</section>
-<section class="p-6">
-<div id="results" class="grid md:grid-cols-3 gap-6"></div>
-</section>
-<footer class="py-10 text-center text-gray-500 text-sm">© 2026 FFXIV 神站資料平台</footer>
-<script src="database.js"></script>
-<script src="js/main.js"></script>
-<script>
-AOS.init({ duration:800, once:true });
-render(data);
-</script>
+<body>
+
+  <!-- Header / 導覽列 -->
+  <header>
+    <h1>FFXIV 資料站</h1>
+    <nav>
+      <ul>
+        <li><a href="#results">首頁</a></li>
+        <li><a href="./pages/raid.html">高難本攻略</a></li>
+        <li><a href="./pages/glamour.html">幻化 / 數據展示</a></li>
+        <li><a href="./pages/tools.html">常用工具</a></li>
+        <li><a href="./pages/beginner.html">新手資料</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主要內容區塊 -->
+  <main id="results">
+
+    <!-- 你原本的新手入坑指南區塊已刪除 -->
+
+    <!-- 高難本攻略區塊 -->
+    <section id="advanced">
+      <h2>高難本攻略</h2>
+      <p>這裡放高難本攻略的簡介及連結</p>
+      <a href="./pages/raid.html">前往高難本攻略</a>
+    </section>
+
+    <!-- 幻化 / 數據展示區塊 -->
+    <section id="showcase">
+      <h2>幻化 / 數據展示</h2>
+      <p>這裡放幻化和數據展示的內容</p>
+      <a href="./pages/glamour.html">查看詳細內容</a>
+    </section>
+
+    <!-- 常用工具區塊 -->
+    <section id="tools">
+      <h2>常用工具</h2>
+      <p>這裡放遊戲輔助工具、資料查詢等</p>
+      <a href="./pages/tools.html">使用工具</a>
+    </section>
+
+    <!-- 新手資料區塊（選擇保留或可刪） -->
+    <section id="beginner">
+      <h2>新手資料</h2>
+      <p>新手入坑需要的資料和連結</p>
+      <a href="./pages/beginner.html">查看新手資料</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 FFXIV 資料站</p>
+  </footer>
+
 </body>
 </html>
